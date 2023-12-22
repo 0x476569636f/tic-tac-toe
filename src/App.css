@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  background-color: rgb(255, 245, 100);
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 60px); 
+  width: 195px; 
+  margin: auto; 
+}

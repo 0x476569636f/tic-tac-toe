@@ -6,6 +6,7 @@ const App = () => {
   const [xIsNext, setXIsNext] = useState(true);
 
   const handleClick = (i) => {
+    if (squares[i]) return;
     const nextsquare = squares.slice();
     nextsquare[i] = xIsNext ? "X" : "O";
     setSquares(nextsquare);

@@ -55,7 +55,12 @@ const App = () => {
       <Square squareValue={squares[6]} onSquareClick={() => handleClick(6)} />
       <Square squareValue={squares[7]} onSquareClick={() => handleClick(7)} />
       <Square squareValue={squares[8]} onSquareClick={() => handleClick(8)} />
-      <h3 id="pemenang">Winner:{winner} </h3>
+      <h3 id="pemenang">
+        Winner:
+        {!winner && squares.filter((val) => val !== null).length == 9
+          ? "Draw"
+          : winner}{" "}
+      </h3>
     </div>
   );
 };

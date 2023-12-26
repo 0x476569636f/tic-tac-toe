@@ -4,6 +4,7 @@ import Square from "./components/Square";
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   const handleClick = (i) => {
     if (squares[i]) return;

@@ -25,7 +25,23 @@ const App = () => {
       [0, 4, 8],
       [2, 4, 6],
     ];
+
+    for (let i = 0; i < lines.length; i++){
+      const [a, b, c] = lines[i];
+
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
+        return squares[a];
+      }
+    }
+    return false;
   };
+
+  const winner = calculateWinner(squares);
+
 
   return (
     <div className="board">
@@ -38,6 +54,7 @@ const App = () => {
       <Square squareValue={squares[6]} onSquareClick={() => handleClick(6)} />
       <Square squareValue={squares[7]} onSquareClick={() => handleClick(7)} />
       <Square squareValue={squares[8]} onSquareClick={() => handleClick(8)} />
+      <h3 id="pemenang">Winner:{winner} </h3>
     </div>
   );
 };

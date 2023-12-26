@@ -7,10 +7,12 @@ const App = () => {
   const [isGameOver, setIsGameOver] = useState(false);
 
   const handleClick = (i) => {
-    if (squares[i]) return;
-    const nextsquare = squares.slice();
-    nextsquare[i] = xIsNext ? "X" : "O";
-    setSquares(nextsquare);
+    if (squares[i] || isGameOver) return;
+    const nextSquare = squares.slice();
+    nextSquare[i] = xIsNext ? "X" : "O";
+    const winner = calculateWinner(nextSquare);
+    if (winner) setIsGameOver(true);
+    setSquares(nextSquare);
     setXIsNext(!xIsNext);
   };
 
@@ -26,7 +28,7 @@ const App = () => {
       [2, 4, 6],
     ];
 
-    for (let i = 0; i < lines.length; i++){
+    for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
 
       if (
@@ -41,7 +43,6 @@ const App = () => {
   };
 
   const winner = calculateWinner(squares);
-
 
   return (
     <div className="board">

@@ -1,5 +1,5 @@
-const Square = () => {
-  return <button className="square">X</button>;
+const Square = ({ Squarevalue }) => {
+  return <button className="square">{Squarevalue}</button>;
 };
 
 export default Square;
